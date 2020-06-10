@@ -1,4 +1,6 @@
 <?php
+
+use think\facade\Env;
 // +----------------------------------------------------------------------
 // | ThinkPHP [ WE CAN DO IT JUST THINK ]
 // +----------------------------------------------------------------------
@@ -11,15 +13,15 @@
 
 return [
     // 数据库类型
-    'type'            => 'mysql',
+    'type'            => Env::get('DB_TYPE', 'mysql'),
     // 服务器地址
-    'hostname'        => '127.0.0.1',
+    'hostname'        => Env::get('DB_HOST', '127.0.0.1'),
     // 数据库名
-    'database'        => '',
+    'database'        => Env::get('DB_NAME', 'ball'),
     // 用户名
-    'username'        => 'root',
+    'username'        => Env::get('DB_USERNAME', 'root'),
     // 密码
-    'password'        => '',
+    'password'        => Env::get('DB_PWD', ''),
     // 端口
     'hostport'        => '',
     // 连接dsn
